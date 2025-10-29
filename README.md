@@ -1,6 +1,6 @@
 ## Trade Instructions App
-### This project requires Docker installed locally.
-### Spring boot run command will start Kafka and Zookeeper Docker containers and run application locally.
+- This project requires Docker installed locally.
+- Spring boot run command will start Kafka and Zookeeper Docker containers and run application locally.
 
 ### mvnw spring-boot:run
 
@@ -17,7 +17,7 @@
 
 ## CURL
 ### The following curl can also be used to call API
-curl --location 'http://localhost:8080/upload-file' --form 'file=@"{path-to-json-or-csv}"'
+- curl --location 'http://localhost:8080/upload-file' --form 'file=@"{path-to-json-or-csv}"'
 
 ## Kafka
 - Messages are published to Kafka when API is called with valid json or csv.
@@ -25,7 +25,7 @@ curl --location 'http://localhost:8080/upload-file' --form 'file=@"{path-to-json
 
 ## Notes
 ### In the interest of time, some requirements are not yet completed.  
-### I will continue working on the following enhancements:
+### Working on the following enhancements:
 - Secure endpoint (Spring Security)
 - Unit Tests (J-Unit & Mockito)
 - Asyncronous Kafka publishing (Executor Service)
