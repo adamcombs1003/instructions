@@ -1,11 +1,11 @@
 ### Trade Instructions App
-* This project requires Docker installed locally.
-* Spring boot run command will start Kafka and Zookeeper Docker containers and run application locally.
+## This project requires Docker installed locally.
+## Spring boot run command will start Kafka and Zookeeper Docker containers and run application locally.
 
 ## mvnw spring-boot:run
 
 ### Files
-* The following files are located at the root of the project
+## The following files are located at the root of the project
 - csv-file.csv (sample csv file to upload)
 - json-file.json (sample json file to upload)
 - docker-compose.yml
