@@ -1,0 +1,52 @@
+[
+    {
+        "platform_id": "ACCT002",
+        "trade": {
+            "account": "10000001",
+            "security": "ABC123",
+            "type": "B",
+            "amount": 100000,
+            "timestamp": "2025-10-26T21:15:33Z"
+        }
+    },
+    {
+        "platform_id": "ACCT002",
+        "trade": {
+            "account": "10000001",
+            "security": "ABC123",
+            "type": "S",
+            "amount": 1000000,
+            "timestamp": "2025-10-25T21:15:33Z"
+        }
+    },
+    {
+        "platform_id": "ACCT002",
+        "trade": {
+            "account": "10000001",
+            "security": "ABC123",
+            "type": "S",
+            "amount": 10000,
+            "timestamp": "2025-10-24T21:15:33Z"
+        }
+    },
+    {
+        "platform_id": "ACCT002",
+        "trade": {
+            "account": "10000001",
+            "security": "ABC123",
+            "type": "B",
+            "amount": 200000,
+            "timestamp": "2025-10-23T21:15:33Z"
+        }
+    },
+    {
+        "platform_id": "ACCT002",
+        "trade": {
+            "account": "10000001",
+            "security": "ABC123",
+            "type": "B",
+            "amount": 120000,
+            "timestamp": "2025-10-22T21:15:33Z"
+        }
+    }
+]
