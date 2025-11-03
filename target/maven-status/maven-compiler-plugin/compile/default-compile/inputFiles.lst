@@ -1,8 +1,0 @@
-C:\Users\acomb\Desktop\instructions\src\main\java\com\example\instructions\controller\TradeController.java
-C:\Users\acomb\Desktop\instructions\src\main\java\com\example\instructions\InstructionsCaptureApplication.java
-C:\Users\acomb\Desktop\instructions\src\main\java\com\example\instructions\model\CanonicalTrade.java
-C:\Users\acomb\Desktop\instructions\src\main\java\com\example\instructions\model\PlatformTrade.java
-C:\Users\acomb\Desktop\instructions\src\main\java\com\example\instructions\service\KafkaListenerService.java
-C:\Users\acomb\Desktop\instructions\src\main\java\com\example\instructions\service\KafkaPublisher.java
-C:\Users\acomb\Desktop\instructions\src\main\java\com\example\instructions\service\TradeService.java
-C:\Users\acomb\Desktop\instructions\src\main\java\com\example\instructions\util\TradeTransformer.java
