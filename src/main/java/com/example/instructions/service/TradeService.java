@@ -1,19 +1,16 @@
 package com.example.instructions.service;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
+import com.example.instructions.model.CanonicalTrade;
+import com.example.instructions.util.TradeTransformer;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.example.instructions.model.CanonicalTrade;
-import com.example.instructions.util.TradeTransformer;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.util.List;
 
 @Service
 public class TradeService {
@@ -27,11 +24,11 @@ public class TradeService {
         this.kafkaPublisher = KafkaPublisher;
     }
 
-    public List<CanonicalTrade> processUploadedFile(MultipartFile file) throws JsonMappingException, JsonProcessingException, IOException {
+    public List<CanonicalTrade> processUploadedFile(MultipartFile file) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         
         if(file != null && file.getContentType() != null) {
-            List<CanonicalTrade> canonicalTrades = new ArrayList<>();
+            List<CanonicalTrade> canonicalTrades;
             if(file.getContentType().equals("text/csv")) {
                 canonicalTrades = tradeTransformer.transformCsvTrades(new String(file.getBytes()));
             } else if (file.getContentType().equals("application/json")) {

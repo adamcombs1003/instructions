@@ -1,6 +1,5 @@
 package com.example.instructions.util;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -40,11 +39,11 @@ public class TradeTransformer {
         return transformedCanonicalTrades;
     }
 
-    public List<CanonicalTrade> transformJsonTrades(String jsonFileContent) throws JsonMappingException, JsonProcessingException {
+    public List<CanonicalTrade> transformJsonTrades(String jsonFileContent) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
-        List<CanonicalTrade> canonicalTrades = objectMapper.readValue(jsonFileContent, new TypeReference<List<CanonicalTrade>>() {});
+        List<CanonicalTrade> canonicalTrades = objectMapper.readValue(jsonFileContent, new TypeReference<>() {});
         List<CanonicalTrade> transformedCanonicalTrades = new ArrayList<>();
-        canonicalTrades.stream().forEach(trade -> {
+        canonicalTrades.forEach(trade -> {
             transformedCanonicalTrades.add(transformCanonicalTrade(trade));
         });
         return transformedCanonicalTrades;

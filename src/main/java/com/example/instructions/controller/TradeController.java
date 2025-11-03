@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.server.ResponseStatusException;
 import com.example.instructions.model.CanonicalTrade;
 import com.example.instructions.service.TradeService;
 
@@ -36,14 +35,14 @@ public class TradeController {
     )
     public ResponseEntity<List<CanonicalTrade>> uploadFile(@RequestParam MultipartFile file) {
         if (file == null || file.isEmpty()){
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "File is missing or empty.");
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
         try {
             List<CanonicalTrade> addedTrades = tradeService.processUploadedFile(file);
-            return new ResponseEntity<List<CanonicalTrade>>(addedTrades, HttpStatus.OK);
+            return new ResponseEntity<>(addedTrades, HttpStatus.OK);
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
